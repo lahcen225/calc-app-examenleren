@@ -1,0 +1,25 @@
+name: checkout workflow
+on:
+  workflow_dispatch:
+
+jobs:
+  continousintergration-job:
+    runs-on: ubuntu-latest  
+    steps:
+      - name: checkout
+        uses: actions/checkout@v6.0.1
+      - name: listing the contents
+        run: ls -alhR
+      - name: getting dependencies
+        uses: actions/setup-node@v6.1.0
+        with:
+          node-version: '20.x'
+          
+      - name: installing dependencies
+        run: npm ci
+        
+      - name: bundle it to a zip
+        run: zip -r app.zip .
+      - name: unit tesitng
+        run: npm test
+        
