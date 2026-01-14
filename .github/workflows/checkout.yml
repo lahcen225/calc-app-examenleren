@@ -7,11 +7,11 @@ jobs:
     runs-on: ubuntu-latest  
     steps:
       - name: checkout
-        uses: actions/checkout@v6.0.1
+        uses: actions/checkout@v4
       - name: listing the contents
         run: ls -alhR
       - name: getting dependencies
-        uses: actions/setup-node@v6.1.0
+        uses: actions/setup-node@v4
         with:
           node-version: '20'
           
