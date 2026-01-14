@@ -18,6 +18,8 @@ jobs:
         run: npm test
       - name: genreatie van een test coverage rapport
         run: npm test --coverage
+      - name: listing contents
+        run: ls -alhR
       - name: make artifact
         uses: actions/upload-artifact@v4
         with:
